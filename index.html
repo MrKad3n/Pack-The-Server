@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pack the Servers! 🌱</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🖥️ Pack the Servers! <span class="tag">🌱 a green computing game</span></div>
+    <div class="topbar-right">
+      <div class="progress" id="progress"></div>
+      <span class="diff-badge" id="diffBadge"></span>
+      <button class="btn small" id="menuBtn">🎚️ Difficulty</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="story">
+      <div class="story-text">
+        <h2 id="stageTitle"></h2>
+        <p id="stageText"></p>
+        <p id="hintText" class="hint" hidden></p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">🖥️ Servers ON</span>
+          <span class="stat-value" id="serversOn">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">🌱 Sleeping</span>
+          <span class="stat-value green" id="serversOff">0</span>
+        </div>
+        <div class="stat energy">
+          <span class="stat-label">⚡</span>
+          <div class="meter"><div id="meterFill"></div></div>
+          <span class="stat-sub" id="energyText"></span>
+        </div>
+        <div class="stat goal"><span class="stat-sub" id="goalText"></span></div>
+      </div>
+      <div class="story-actions">
+        <button id="hintBtn" class="btn soft">💡 Hint</button>
+        <button id="skipBtn" class="btn skip" hidden></button>
+        <button id="nextBtn" class="btn primary"></button>
+      </div>
+    </section>
+
+    <section class="datacenter" id="datacenter"></section>
+
+    <section class="tray-wrap">
+      <div class="tray-head">
+        <h3>📦 Jobs waiting for a server</h3>
+        <span class="tip">👆 Drag a job onto a server · Tap a job to turn it</span>
+      </div>
+      <div id="tray" class="tray"></div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="card" id="card"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
